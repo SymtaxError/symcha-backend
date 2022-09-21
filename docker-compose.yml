@@ -1,0 +1,12 @@
+services:
+  symcha-db:
+    image: centos/postgresql-12-centos8
+    restart: unless-stopped
+    ports:
+      - 5770:5432
+    environment:
+      POSTGRESQL_USER: master
+      POSTGRESQL_PASSWORD: master
+      POSTGRESQL_DATABASE: symcha
+    volumes:
+      - /usr/symcha_db/postgresql:/var/lib/postgresql
